@@ -1,13 +1,16 @@
 import style from './MyPosts.module.css'
 import Post from './Post/Post';
 
-const MyPosts = () => {
+const MyPosts = (props) => {
 
-    let postData = [
-        {id: 1, message: 'Hi, whats up?', likesCount: 12},
-        {id: 2, message: "It's my first post?", likesCount: 27},
-        {id: 3, message: 'Yo', likesCount: 42}
-    ]
+    // let posts = [
+    //     { id: 1, message: 'Hi, whats up?', likesCount: 12 },
+    //     { id: 2, message: "It's my first post?", likesCount: 27 },
+    //     { id: 3, message: 'Yo', likesCount: 42 }
+    // ]
+
+    let postsElements = props.posts
+        .map(p => <Post message={p.message} />);
 
     return (
         <div className={style.postsBlock}>
@@ -21,8 +24,7 @@ const MyPosts = () => {
                 </div>
             </div>
             <div className={style.posts}>
-                <Post message={postData[0].message} />
-                <Post message={postData[1].message} />
+                { postsElements }
             </div>
         </div>
     )

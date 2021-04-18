@@ -8,6 +8,7 @@ import Settings from './components/Settings/Settings';
 import News from './components/News/News';
 
 const App = () => {
+
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
@@ -15,10 +16,10 @@ const App = () => {
         <Navbar />
         {/* <Profile /> */}
         <div className='app-wrapper-content'>
-          <Route exact path='/dialogs' component={Dialogs} />
-          <Route path='/profile' component={Profile} />
-          <Route path='/news' component={News} />
-          <Route path='/settings' component={Settings} />
+          <Route exact path='/dialogs'  render={ () => <Dialogs /> } />
+          <Route path='/profile'        render={ () => <Profile /> } />
+          <Route path='/news'           render={ () => <News /> } />
+          <Route path='/settings'       render={ () => <Settings /> } />
         </div>
 
       </div>
