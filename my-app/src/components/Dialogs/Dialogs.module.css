@@ -11,9 +11,12 @@
     color: gold;
 }
 
+.dialogsItem {
+    color: white;
+}
 
 .dialog {
-
+    color: white;
 }
 
 .messages {

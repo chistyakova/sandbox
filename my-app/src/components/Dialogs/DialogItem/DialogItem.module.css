@@ -1,0 +1,22 @@
+.dialogsItem {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    padding: 10px;
+}
+
+.dialogsItem img {
+    object-fit: cover;
+    width:  90px;
+    height: 90px;
+    border-radius: 100%;
+}
+
+.dialogName {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+}
+
+.dialogName a {
+    color: white;
+}
