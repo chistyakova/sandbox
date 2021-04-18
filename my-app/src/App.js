@@ -7,17 +7,17 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Settings from './components/Settings/Settings';
 import News from './components/News/News';
 
-const App = () => {
+const App = (props) => {
+  debugger;
 
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
         <Header />
         <Navbar />
-        {/* <Profile /> */}
         <div className='app-wrapper-content'>
-          <Route exact path='/dialogs'  render={ () => <Dialogs /> } />
-          <Route path='/profile'        render={ () => <Profile /> } />
+          <Route exact path='/dialogs'  render={ () => <Dialogs state = {props.state.dialogPage}/> } />
+          <Route path='/profile'        render={ () => <Profile state = {props.state.profilePage} /> } />
           <Route path='/news'           render={ () => <News /> } />
           <Route path='/settings'       render={ () => <Settings /> } />
         </div>
