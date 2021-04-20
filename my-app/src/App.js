@@ -8,16 +8,14 @@ import Settings from './components/Settings/Settings';
 import News from './components/News/News';
 
 const App = (props) => {
-  debugger;
-
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
         <Header />
         <Navbar />
         <div className='app-wrapper-content'>
-          <Route exact path='/dialogs'  render={ () => <Dialogs state = {props.state.dialogPage}/> } />
-          <Route path='/profile'        render={ () => <Profile state = {props.state.profilePage} /> } />
+          <Route exact path='/dialogs'  render={ () => <Dialogs state = {props.state.dialogPage} /> } />
+          <Route path='/profile'        render={ () => <Profile state = {props.state.profilePage} addPost={props.addPost}/> } />
           <Route path='/news'           render={ () => <News /> } />
           <Route path='/settings'       render={ () => <Settings /> } />
         </div>
