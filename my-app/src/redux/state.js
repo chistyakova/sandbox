@@ -27,10 +27,12 @@ let state = {
     }    
 }
 
+window.state = state;
+
 export let addPost = () => {
     let newPost = {
         id: 5,
-        message: state.profilePage.postMessage,
+        message: state.profilePage.newPostText,
         likesCount: 0
     };
 
