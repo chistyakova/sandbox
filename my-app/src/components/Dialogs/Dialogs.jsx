@@ -6,10 +6,10 @@ import Message from './Message/Message'
 const Dialogs = (props) => {
     debugger;
 
-    let dialogsElements = props.dialogs
+    let dialogsElements = props.dialogPage.dialogs
         .map(d => <DialogItem name={d.name} id={d.id} avatar={d.avatar} />);
 
-    let messagesElements = props.messages
+    let messagesElements = props.dialogPage.messages
         .map(m => <Message message={m.message} />);
 
     let onSendMessage = () => {
@@ -31,7 +31,7 @@ const Dialogs = (props) => {
                 <div>
                     <textarea placeholder='Enter your message'
                         onChange={onMessageChange}
-                        value={props.newMessageText}
+                        value={props.dialogPage.newMessageText}
                     />
                 </div>
                 <div>
