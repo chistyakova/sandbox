@@ -7,10 +7,10 @@ const Dialogs = (props) => {
     debugger;
 
     let dialogsElements = props.dialogPage.dialogs
-        .map(d => <DialogItem name={d.name} id={d.id} avatar={d.avatar} />);
+        .map(d => <DialogItem name={d.name} key={d.id} id={d.id} avatar={d.avatar} />);
 
     let messagesElements = props.dialogPage.messages
-        .map(m => <Message message={m.message} />);
+        .map(m => <Message message={m.message} key={m.id} />);
 
     let onSendMessage = () => {
         props.sendMessage();
