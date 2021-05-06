@@ -3,12 +3,14 @@ const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_USERS_TOTAL_COUNT = 'SET_USERS_TOTAL_COUNT';
+const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING'
 
 let initialState = {
     users: [],
     pageSize: 6,
     totalUsersCount: 0,
-    currentPage: 1
+    currentPage: 1,
+    isFetching: true
     // { id: 1, photoUrl: 'https://inde.io/i/posts/33099/e78d8b0d8f4650e25bee66beb2d19d55.jpg', 
     //     followed: false, fullName: 'Dimych', status: 'I am a boss', location: {city: 'Minsk', country: 'Belarus'} },
     // { id: 2, photoUrl: 'https://img.gazeta.ru/files3/253/13275253/TASS_32887361-pic4_zoom-1500x1500-66712.jpg', 
@@ -40,6 +42,8 @@ const usersReducer = (state = initialState, action) => {
             return { ...state, currentPage: action.currentPage };
         case SET_USERS_TOTAL_COUNT:
             return { ...state, totalUsersCount: action.totalUsersCount };
+        case TOGGLE_IS_FETCHING:
+            return { ...state, isFetching: action.isFetching };
         default:
             return state;
     }
@@ -54,5 +58,7 @@ export const setUsersAC = (users) => ({ type: SET_USERS, users });
 export const setCurrentPageAC = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage });
 
 export const setUsersTotalCountAC = (totalUsersCount) => ({ type: SET_USERS_TOTAL_COUNT, totalUsersCount });
+
+export const toggleIsFetchingAC = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching });
 
 export default usersReducer;
