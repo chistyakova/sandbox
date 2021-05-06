@@ -1,5 +1,6 @@
 import Preloader from '../../common/Preloader/Preloader';
 import style from './ProfileInfo.module.css'
+import userPhoto from '../../../assets/images/user.jpg'
 
 const ProfileInfo = (props) => {
     if(!props.profile) {
@@ -11,8 +12,12 @@ const ProfileInfo = (props) => {
             <img src='https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg' />
         </div>
         <div className={style.descriptionBlock}>
-            <img src={props.profile.photos.large} />
-            ava+descr9999
+            <div>
+            <img src={props.profile.photos.large ? props.profile.photos.large : userPhoto} />
+            </div>
+            <div>
+                {props.profile.aboutMe}
+            </div>
         </div>
     </div>
     )
