@@ -1,5 +1,4 @@
 import * as axios from 'axios';
-import { followSucces } from '../redux/users-reducer';
 
 const instance = axios.create({
     withCredentials: true,
@@ -21,5 +20,15 @@ export const usersAPI = {
 
     unfollow(userId) {
         return instance.delete(`follow/${userId}`)
+    },
+
+    getProfile(userId) {
+        return instance.get(`profile/${userId}`)
+    }
+}
+
+export const authAPI = {
+    singIn() {
+        return instance.get(`auth/me`)
     }
 }
